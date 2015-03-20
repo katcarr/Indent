@@ -9,7 +9,7 @@ class PostsController< ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.date = Date.new
+    @post.date = Date.today
     if @post.save
       flash[:notice] = "Post posted"
       redirect_to posts_path
