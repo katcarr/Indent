@@ -3,3 +3,22 @@
 <h3><%= @post.title %></h3>
 <h4><%= @post.date.strftime('%m/%d/%Y') %></h4>
 <p><%= @post.content %></p>
+
+
+
+<%= form_for [@post, @comment], class:"form_horizontal" do |f| %>
+  <%= f.label :thoughts , class:"form-label" %>
+  <%= f.text_area :thoughts, rows: 3, class:"form-control"%>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <br>
+  <%= f.submit "Comment", class: ['btn','btn-default']%>
+<% end %>
+
+<br>
+
+<div class="well">
+  <h4>Comments</h4>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.thoughts %></p>
+  <% end %>
+</div>
