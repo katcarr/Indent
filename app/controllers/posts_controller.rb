@@ -1,5 +1,21 @@
 class PostsController< ApplicationController
   def new
+    @post = Post.new
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "Post successfully updated!"
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def index

@@ -1,12 +1,3 @@
 <h3>New Post</h3>
 
-<%=form_for Post.new, class:"form-horizontal" do |f|%>
-  <%= f.label :title , class:"form-label"%>
-  <%= f.text_field :title, class:"form-control" %>
-  <br>
-  <%= f.label :content, class:"form-label"  %>
-  <br>
-  <%= f.text_area :content, rows: 15, class:"form-control" %>
-  <br>
-  <%= f.submit "Post", class: ['btn-warning', 'btn-lg']%>
-<% end %>
+<%= render 'form' %>
