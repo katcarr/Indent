@@ -1,0 +1,15 @@
+<h3>New Post</h3>
+
+<%=form_for Post.new, class:"form-horizontal" do |f|%>
+  <%= f.label :title , class:"form-label"%>
+  <%= f.text_field :title, class:"form-control" %>
+  <br>
+  <div class="form-group">
+    <%= f.label :date, class:"form-label"  %>
+    <%= select_date Date.today, prefix: :date , class:"form-control"%>
+  </div>
+  <br>
+  <%= f.label :content, class:"form-label"  %>
+  <br>
+  <%= f.text_area :content, rows: 20, class:"form-control" %>
+<% end %>
