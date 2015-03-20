@@ -1,0 +1,26 @@
+require 'rails_helper'
+
+
+describe "add new post process" do
+  it "will return error message if title is empty" do
+    visit 'posts/new'
+    fill_in 'Content', with: "Stuff to know"
+    click_on 'Post'
+    expect(page).to have_content 'There was a problem submitting your post'
+  end
+
+  it "will return error message if content is empty" do
+    visit 'posts/new'
+    fill_in 'Title', with: "Stuff to know"
+    click_on 'Post'
+    expect(page).to have_content 'There was a problem submitting your post'
+  end
+
+  it "will returns to posts page when post is successfully created with sucess message" do
+    visit 'posts/new'
+    fill_in 'Title', with: "Stuff to know"
+    fill_in 'Content', with: "Stuff to know and more stuff"
+    click_on 'Post'
+    expect(page).to have_content 'Post posted'
+  end
+end
