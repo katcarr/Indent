@@ -16,8 +16,11 @@
   </div>
 
   <div class="col-sm-4">
-    <% @posts.each  do |post| %>
-      <h5><%= link_to post.title, post_path(post) %></h5>
+    <% if @posts.any? %>
+      <h4>All Posts</h4>
+      <% @posts.each  do |post| %>
+        <h5><%= link_to post.title, post_path(post) %></h5>
+      <% end %>
     <% end %>
   </div>
 </div>
