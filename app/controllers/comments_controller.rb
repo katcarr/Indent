@@ -2,6 +2,9 @@ class CommentsController<ApplicationController
   def create
     post = Post.find(params[:post_id])
     comment = post.comments.new(comment_params)
+    if current_user
+      comment.user_id = current_user.id
+    end
     if comment.save
      flash[:notice] = "Comment added"
      redirect_to :back
