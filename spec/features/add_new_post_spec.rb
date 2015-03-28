@@ -2,6 +2,12 @@ require 'rails_helper'
 
 
 describe "add new post process" do
+  it "will not allow a new post without logging in" do
+    visit '/'
+    click_on 'Add Post'
+    expect(page).to have_content 'Please log in to create a new post'
+  end
+
   it "will return error message if title is empty" do
     user = FactoryGirl.create(:user)
     sign_in_user(user)

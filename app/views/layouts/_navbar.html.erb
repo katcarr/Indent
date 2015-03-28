@@ -8,16 +8,16 @@
         <span class="icon-bar"></span>
       </button>
       <ul class="nav navbar-nav">
-        <li><h1><%= link_to 'Indent' , posts_path %></h1></li>
+        <li><h1><%= link_to 'Indent: Blogs for Devs' , '/' %></h1></li>
       </ul>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse our-nav" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><h4>Blogs for Devs</h4></li>
-        <li><%= link_to 'Posts', posts_path %></li>
+        <li><%= link_to 'All Posts', posts_path %></li>
+        <li><%= link_to 'Add Post', new_post_path %></li>
       </ul>
-      <div class="nav navbar-nav navbar-right our-right-nav">
+      <ul class="nav navbar-nav navbar-right">
 
         <% if user_signed_in? %>
 
@@ -28,7 +28,7 @@
             <%= link_to "LogIn", new_user_session_path, class: 'btn btn-info' %>
             <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>
         <% end %>
-      </div>
+      </ul>
     </div>
   </div>
 </nav>
