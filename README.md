@@ -22,6 +22,7 @@ Motivation
 > **To Practice:**
 >- Ruby On Rails project setup
 >- Unit testing with RSPEC
+>- Devise Gem for user authentication
 >- Integration testing with CAPYBARA
 
 Author
