@@ -3,6 +3,8 @@ require 'rails_helper'
 
 describe "add new post process" do
   it "will return error message if title is empty" do
+    user = FactoryGirl.create(:user)
+    sign_in_user(user)
     visit 'posts/new'
     fill_in 'Content', with: "Stuff to know"
     click_on 'Post'
@@ -10,6 +12,8 @@ describe "add new post process" do
   end
 
   it "will return error message if content is empty" do
+    user = FactoryGirl.create(:user)
+    sign_in_user(user)
     visit 'posts/new'
     fill_in 'Title', with: "Stuff to know"
     click_on 'Post'
@@ -17,6 +21,8 @@ describe "add new post process" do
   end
 
   it "will returns to posts page when post is successfully created with sucess message" do
+    user = FactoryGirl.create(:user)
+    sign_in_user(user)
     visit 'posts/new'
     fill_in 'Title', with: "Stuff to know"
     fill_in 'Content', with: "Stuff to know and more stuff"

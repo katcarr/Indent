@@ -31,6 +31,7 @@ class PostsController< ApplicationController
   def create
     @post = Post.new(post_params)
     @post.date = Date.today
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "Post posted"
       redirect_to posts_path
