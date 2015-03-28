@@ -8,25 +8,27 @@
         <span class="icon-bar"></span>
       </button>
       <ul class="nav navbar-nav">
-        <li><h1><%= link_to 'Indent' , posts_path %><h5>Blogs for Developers<h5></h1></li>
+        <li><h1><%= link_to 'Indent' , posts_path %></h1></li>
       </ul>
     </div>
 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><h4>Blogs for Devs</h4></li>
+        <li><%= link_to 'Posts', posts_path %></li>
+      </ul>
+      <div class="nav navbar-nav navbar-right our-right-nav">
 
+        <% if user_signed_in? %>
 
-    <div class="navbar-right our-right-nav">
-
-      <% if user_signed_in? %>
-
-          <%= current_user.email %>
-          <%= link_to 'LogOut', destroy_user_session_path, method: :delete , class: 'btn btn-info' %>
-          <%= link_to 'My Stuff', user_path(current_user) , class: 'btn btn-primary' %>
-      <% else %>
-          <%= link_to "LogIn", new_user_session_path, class: 'btn btn-info' %>
-          <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>
-      <% end %>
+            <%= current_user.email %>
+            <%= link_to 'LogOut', destroy_user_session_path, method: :delete , class: 'btn btn-info' %>
+            <%= link_to 'My Stuff', user_path(current_user) , class: 'btn btn-primary' %>
+        <% else %>
+            <%= link_to "LogIn", new_user_session_path, class: 'btn btn-info' %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>
+        <% end %>
+      </div>
     </div>
-
-
   </div>
 </nav>

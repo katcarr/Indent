@@ -21,3 +21,13 @@ body{
   margin-top:20px;
   margin-right:5px;
 }
+
+.homepage{
+  position: relative;
+  background: url("vim_front_page.png") no-repeat center center;
+  background-size: cover;
+}
+
+.home-page{
+
+}
