@@ -1,0 +1,28 @@
+<h1><%= current_user.email %>'s Home Page</h1>
+
+<div class="row">
+  <div class= "col-sm-8">
+    <% if current_user.posts.any? %>
+      <% current_user.posts.each  do |post| %>
+        <%= link_to post_path(post) do %>
+          <h3><%= post.title %></h3>
+          <h4><%= post.user.email %></h4>
+          <h4><%= post.date %></h4>
+      <% end %>
+          <p><%= post.content %></p>
+          <%= link_to "Comment", post_path(post) , class: ['btn-warning', 'btn']%>
+        <% end %>
+    <% else %>
+      <h3>You have not posted on Indent yet</h3>
+    <% end%>
+  </div>
+
+  <div class="col-sm-4">
+    <% if @posts.any? %>
+      <h4>All Posts</h4>
+      <% @posts.each  do |post| %>
+        <h5><%= link_to post.title, post_path(post) %></h5>
+      <% end %>
+    <% end %>
+  </div>
+</div>
