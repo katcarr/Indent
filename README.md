@@ -17,6 +17,10 @@ $ rails server
 
 In your browser visit localhost:3000
 
+or check use the app at
+
+http://indent.herokuapp.com
+
 Motivation
 --------
 > **To Practice:**

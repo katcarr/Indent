@@ -26,8 +26,5 @@ body{
   position: relative;
   background: url("vim_front_page.png") no-repeat center center;
   background-size: cover;
-}
-
-.home-page{
-
+  background-position: 0 70px;
 }
