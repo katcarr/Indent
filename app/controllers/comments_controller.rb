@@ -1,21 +1,26 @@
 class CommentsController<ApplicationController
   def create
-    post = Post.find(params[:post_id])
-    comment = post.comments.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
     if current_user
-      comment.user_id = current_user.id
+      @comment.user_id = current_user.id
     end
-    if comment.save
+
+    if @comment.save
      flash[:notice] = "Comment added"
-     redirect_to :back
-   else
+    else
      flash[:alert] = "Something went wrong when commenting"
-     redirect_to :back
+    end
+
+    response do |format|
+      format.html {redirect_to :back}
+      format.js
     end
   end
 
   def new
-
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new
   end
 
   def show

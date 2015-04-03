@@ -1,7 +1,6 @@
-<%= form_for [@post, @comment], class:"form_horizontal" do |f| %>
+<%= form_for [@post, @comment], class:"form_horizontal", remote: true do |f| %>
   <%= f.label :thoughts , class:"form-label" %>
   <%= f.text_area :thoughts, rows: 3, class:"form-control"%>
-  <%= f.hidden_field :post_id, value: @post.id %>
   <br>
   <%= f.submit "Comment", class: ['btn','btn-default']%>
 <% end %>

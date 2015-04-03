@@ -1,0 +1,8 @@
+<div class="well">
+  <% if comment.user %>
+    <h5>User: <%= comment.user.email %></h5>
+  <% else %>
+    <h5>Anonymous User</h5>
+  <% end %>
+  <p><%= comment.thoughts %></p>
+</div>

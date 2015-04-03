@@ -16,30 +16,13 @@
   <% end %>
 </div>
 
-
-
-
-
-<%= form_for [@post, @comment], class:"form_horizontal" do |f| %>
-  <%= f.label :thoughts , class:"form-label" %>
-  <%= f.text_area :thoughts, rows: 3, class:"form-control"%>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  <br>
-  <%= f.submit "Comment", class: ['btn','btn-default']%>
-<% end %>
+<%= link_to "Comment", new_post_comment_path(@post), class: 'btn btn-warning', id: 'comment-link', remote: true %>
 
 <br>
 
 <% if @post.comments.any? %>
-  <div class="well">
-    <h4>Comments</h4>
-    <% @post.comments.each do |comment| %>
-      <% if comment.user %>
-        <h5>User: <%= comment.user.email %></h5>
-      <% else %>
-        <h5>Anonymous User</h5>
-      <% end %>
-      <p><%= comment.thoughts %></p>
-    <% end %>
+  <h4>Comments</h4>
+  <div class="comments">
+    <%= render @post.comments %>
   </div>
 <% end %>
