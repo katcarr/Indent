@@ -16,6 +16,7 @@ gem 'bootswatch-rails'
 gem 'letter_opener', :group => :development
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem 'unobtrusive_flash', '>=3'
 
 group :development, :test do
   gem 'byebug'
@@ -30,6 +31,8 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'database_cleaner', '~> 1.4.1'
 end
 
 group :production do
