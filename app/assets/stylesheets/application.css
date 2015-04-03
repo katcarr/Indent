@@ -28,3 +28,16 @@ body{
   background-size: cover;
   background-position: 0 70px;
 }
+
+.post-layout a{
+  text-decoration: none;
+}
+
+.post-layout p {
+  color: grey;
+}
+
+.post-layout a:hover{
+  text-decoration: none;
+  color: blue;
+}

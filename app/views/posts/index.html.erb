@@ -1,11 +1,14 @@
 <div class="row">
   <div class= "col-sm-8">
-    <% @posts.each  do |post| %>
-      <h3><%= post.title %></h3>
-      <h4><%= post.user.email %></h4>
-      <h4><%= post.date %></h4>
-      <p><%= post.content %></p>
-      <%= link_to "Comment", post_path(post) , class: ['btn-warning', 'btn']%>
+      <% @posts.each  do |post| %>
+      <%= link_to post_path(post) do %>
+      <div class = "post-layout">
+        <h3><%= post.title %></h3>
+        <h4><%= post.user.email %></h4>
+        <h4><%= post.date %></h4>
+        <p><%= post.content %></p>
+      <% end %>
+      </div>
     <% end %>
 
 
