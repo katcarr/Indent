@@ -17,6 +17,7 @@ gem 'letter_opener', :group => :development
 gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'unobtrusive_flash', '>=3'
+gem 'rest-client'
 
 group :development, :test do
   gem 'byebug'
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do
